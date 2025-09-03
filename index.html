@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Student Details</title>
+	<style>
+		table {
+			border-collapse: collapse;
+		}
+		th, td {
+			border: 1px solid black;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h1>Student Details</h1>
+	<table>
+		<tr>
+			<th>Roll No.</th>
+			<th>Name</th>
+			<th>Class</th>
+			<th>Section</th>
+			<th>Marks</th>
+		</tr>
+		<tr>
+			<td>1</td>
+			<td>John Doe</td>
+			<td>10</td>
+			<td>A</td>
+			<td>85</td>
+		</tr>
+		<tr>
+			<td>2</td>
+			<td>Jane Smith</td>
+			<td>10</td>
+			<td>B</td>
+			<td>90</td>
+		</tr>
+		<tr>
+			<td>3</td>
+			<td>Bob Johnson</td>
+			<td>10</td>
+			<td>A</td>
+			<td>78</td>
+		</tr>
+	</table>
+
+	<form>
+		<h2>Add New Student</h2>
+		<label for="rollno">Roll No.:</label>
+		<input type="number" id="rollno" name="rollno"><br><br>
+		<label for="name">Name:</label>
+		<input type="text" id="name" name="name"><br><br>
+		<label for="class">Class:</label>
+		<input type="number" id="class" name="class"><br><br>
+		<label for="section">Section:</label>
+		<input type="text" id="section" name="section"><br><br>
+		<label for="marks">Marks:</label>
+		<input type="number" id="marks" name="marks"><br><br>
+		<button onclick="addStudent()">Add Student</button>
+	</form>
+
+	<script>
+		function addStudent() {
+			var rollno = document.getElementById("rollno").value;
+			var name = document.getElementById("name").value;
+			var classVal = document.getElementById("class").value;
+			var section = document.getElementById("section").value;
+			var marks = document.getElementById("marks").value;
+
+			var table = document.getElementsByTagName("table")[0];
+			var newRow = table.insertRow(-1);
+
+			var cell1 = newRow.insertCell(0);
+			var cell2 = newRow.insertCell(1);
+			var cell3 = newRow.insertCell(2);
+			var cell4 = newRow.insertCell(3);
+			var cell5 = newRow.insertCell(4);
+
+			cell1.innerHTML = rollno;
+			cell2.innerHTML = name;
+			cell3.innerHTML = classVal;
+			cell4.innerHTML = section;
+			cell5.innerHTML = marks;
+		}
+	</script>
+</body>
+</html>
